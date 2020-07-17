@@ -1,0 +1,1 @@
+# quickapp-typescript-template
