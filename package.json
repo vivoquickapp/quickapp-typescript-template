@@ -1,0 +1,24 @@
+{
+  "name": "quickapp-typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=8.10"
+  },
+  "scripts": {
+    "start": "hap server --watch",
+    "build": "hap build",
+    "release": "hap release",
+    "server": "hap server",
+    "watch": "hap watch",
+    "lint": "eslint --format codeframe --fix --ext .ux,.js src/"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "hap-toolkit": "^0.7.5",
+    "ts-loader": "^8.0.0",
+    "typescript": "^3.9.6"
+  }
+}
