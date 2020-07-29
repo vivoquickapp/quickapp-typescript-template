@@ -1,24 +1,53 @@
 {
   "name": "quickapp-typescript-template",
   "version": "1.0.0",
-  "description": "",
-  "engines": {
-    "node": ">=8.10"
-  },
+  "description": "基于 TypeScript 编写「快应用」模版。",
   "scripts": {
     "start": "hap server --watch",
     "build": "hap build",
     "release": "hap release",
     "server": "hap server",
     "watch": "hap watch",
-    "lint": "eslint --format codeframe --fix --ext .ux,.js src/"
+    "lint": "eslint --format codeframe --fix --ext .ux,.js src/",
+    "precommit-msg": "echo '🚧 start pre-commit checks...' && exit 0",
+    "prettier": "node ./scripts/selfCloseInputTag.js && prettier --write \"src/**/*.{js,ux,qxml}\"",
+    "watcher": "onchange '**/*.md' \"src/**/**/*.{js,ux,less,scss,css}\" -- prettier --write {{changed}}"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "hap-toolkit": "^0.7.5",
+    "husky": "^4.2.5",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "lint-staged": "^10.2.11",
+    "onchange": "^7.0.2",
+    "prettier-plugin-ux": "^0.3.0",
     "ts-loader": "^8.0.0",
     "typescript": "^3.9.6"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run precommit-msg && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/**.{ux,js,json,pcss,md,vue,less,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "printWidth": 120,
+    "proseWrap": "never"
+  },
+  "engines": {
+    "node": ">=8.10"
+  },
+  "browserslist": [
+    "chrome 65"
+  ]
 }
