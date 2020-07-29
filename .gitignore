@@ -9,6 +9,7 @@ Thumbs.db
 *.iml
 .idea/
 .vscode/
+.quickapp.preview.json
 
 .nyc_output
 /coverage
