@@ -1,10 +1,10 @@
 {
-  "package": "com.application.demo",
-  "name": "demo20200713",
+  "package": "com.typescript.quickapp",
+  "name": "TS写快应用示例",
   "versionName": "1.0.0",
   "versionCode": "1",
-  "minPlatformVersion": "1020",
-  "icon": "/Common/logo.png",
+  "minPlatformVersion": "1060",
+  "icon": "/assets/images/logo.png",
   "deviceTypeList": [
     "phone"
   ],
@@ -28,12 +28,12 @@
     "logLevel": "log"
   },
   "router": {
-    "entry": "Demo",
+    "entry": "pages/Main",
     "pages": {
-      "Demo": {
+      "pages/Main": {
         "component": "index"
       },
-      "About": {
+      "pages/About": {
         "component": "index"
       }
     }
@@ -43,12 +43,12 @@
     "titleBarTextColor": "#414141",
     "menu": true,
     "pages": {
-      "Demo": {
-        "titleBarText": "示例页",
+      "Main": {
+        "titleBarText": "示例主页",
         "menu": false
       },
-      "DemoDetail": {
-        "titleBarText": "详情页"
+      "MainDetail": {
+        "titleBarText": "示例详情页"
       },
       "About": {
         "menu": false

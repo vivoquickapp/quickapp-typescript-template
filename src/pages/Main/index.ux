@@ -1,0 +1,118 @@
+<template>
+  <div class="page-wrapper main-page">
+    <div class="nice-detail wrapper-padding">
+      <image class="icon" src="{{icon}}"></image>
+      <text class="title">{{ title }}</text>
+      <text class="desc">快应用是基于手机硬件平台的新型应用形态，标准是由主流手机厂商组成的快应用联盟联合制定。</text>
+      <div class="btn-area">
+        <input class="button" type="button" onclick="onOpenDocClick" value="开发文档" />
+        <input class="button" type="button" onclick="onSwitchClick" value="{{ helloStr }}" />
+      </div>
+    </div>
+    <div class="nice-detail find-more wrapper-padding">
+      <text class="title">快应用，赋能开发者</text>
+      <text class="desc"
+        >其标准的诞生将在研发接口、能力接入、开发者服务等层面建设标准平台，以平台化的生态模式对个人开发者和企业开发者全品类开放。</text
+      >
+      <text class="desc"
+        >快应用具备传统 APP 完整的应用体验，无需安装、即点即用；覆盖 10
+        亿设备，与操作系统深度集成，探索新型应用场景。</text
+      >
+      <text class="desc">快应用 ── 复杂生活的简单答案，让生活更顺畅。</text>
+    </div>
+    <div class="nice-detail share-more wrapper-padding">
+      <text class="title">快应用，拓展场景未来</text>
+      <text class="desc"
+        >其标准的诞生将在研发接口、能力接入、开发者服务等层面建设标准平台，以平台化的生态模式对个人开发者和企业开发者全品类开放。</text
+      >
+      <text class="desc"
+        >快应用具备传统 APP 完整的应用体验，无需安装、即点即用；覆盖 10
+        亿设备，与操作系统深度集成，探索新型应用场景。</text
+      >
+      <text class="desc">快应用 ── 复杂生活的简单答案，让生活更顺畅。</text>
+    </div>
+  </div>
+</template>
+
+<script>
+import webview from '@system.webview'
+import router from '@system.router'
+import app from '@system.app'
+
+// import { greeter, goAbout, add } from './greeter'
+const helloStr: string = '切换文本'
+
+const appInfo = app.getInfo()
+
+export default {
+  // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+  private: {
+    helloStr: helloStr
+  },
+
+  protected: {
+    title: appInfo.name,
+    icon: appInfo.icon
+  },
+
+  onInit() {},
+
+  onReady() {},
+
+  onShow() {},
+
+  onMenuPress() {
+    this.$app.$def.showMenu()
+  },
+
+  /* -------------------SelfCustomEvent------------------ */
+  onOpenDocClick(elem) {
+    $utils.printObj(elem)
+    $utils.route2theUrl('https://doc.quickapp.cn/')
+  },
+
+  onSwitchClick() {
+    this.helloStr = this.helloStr === helloStr ? 'Hello TS.' : helloStr
+  }
+}
+</script>
+
+<style lang="less">
+@import './../../assets/styles/style.less';
+.main-page {
+  width: 100%;
+  .flex-box-mixins(column, center, center);
+  .round {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+  .btn-area {
+    .flex-box-mixins(row, center, center);
+    .button {
+      margin: 6 * @size-factor 2 * @size-factor;
+    }
+  }
+  .icon {
+    margin-top: 5 * @size-factor;
+    width: 24 * @size-factor;
+    height: 24 * @size-factor;
+    border-radius: 12 * @size-factor;
+  }
+  .nice-detail {
+    height: 90 * @size-factor;
+    .flex-box-mixins(column, center, center);
+  }
+  .find-more {
+    background-color: @black;
+    .title,
+    .desc {
+      color: @white;
+    }
+  }
+  .share-more {
+    color: @black;
+    background-color: @white;
+  }
+}
+</style>

@@ -2,7 +2,7 @@
  * @file 全局能力的配置与获取
  */
 
-function getGlobalRef() {
+const getGlobalRef = () => {
   return Object.getPrototypeOf(global) || global
 }
 
@@ -13,7 +13,7 @@ const quickappGlobal = getGlobalRef()
  * @param key {string}
  * @param val {*}
  */
-function setGlobalData(key, val) {
+const setGlobalData = (key, val) => {
   quickappGlobal[key] = val
 }
 
@@ -22,7 +22,7 @@ function setGlobalData(key, val) {
  * @param key {string}
  * @return {*}
  */
-function getGlobalData(key) {
+const getGlobalData = key => {
   return quickappGlobal[key]
 }
 
