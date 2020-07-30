@@ -24,7 +24,6 @@
     "lint-staged": "^10.2.11",
     "onchange": "^7.0.2",
     "prettier-plugin-ux": "^0.3.0",
-    "ts-loader": "^8.0.0",
     "typescript": "^3.9.6"
   },
   "husky": {

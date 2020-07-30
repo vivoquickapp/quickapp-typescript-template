@@ -5,7 +5,7 @@
       <text class="title">{{ title }}</text>
       <text class="desc">快应用是基于手机硬件平台的新型应用形态，标准是由主流手机厂商组成的快应用联盟联合制定。</text>
       <div class="btn-area">
-        <input class="button" type="button" onclick="onOpenDocClick" value="开发文档" />
+        <input class="button" type="button" onclick="onOpenDocClick" value="关于页面" />
         <input class="button" type="button" onclick="onSwitchClick" value="{{ helloStr }}" />
       </div>
     </div>
@@ -55,7 +55,9 @@ export default {
     icon: appInfo.icon
   },
 
-  onInit() {},
+  onInit() {
+    this.$page.setTitleBar({ text: this.title })
+  },
 
   onReady() {},
 
@@ -68,7 +70,7 @@ export default {
   /* -------------------SelfCustomEvent------------------ */
   onOpenDocClick(elem) {
     $utils.printObj(elem)
-    $utils.route2theUrl('https://doc.quickapp.cn/')
+    $utils.route2theUrl('pages/About')
   },
 
   onSwitchClick() {
