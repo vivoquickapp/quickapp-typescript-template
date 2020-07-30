@@ -41,7 +41,13 @@
   "display": {
     "titleBarBackgroundColor": "#f2f2f2",
     "titleBarTextColor": "#414141",
-    "menu": true,
+    "menu": false,
+    "menuBarData": {
+      "menuBar" : true,
+      "menuBarStyle":"dark",
+      "shareTitle":"TS写快应用示例",
+      "shareDescription":"如何基于 Typescript 开发快应用，项目示例模版"
+    },
     "pages": {
       "Main": {
         "titleBarText": "示例主页",
