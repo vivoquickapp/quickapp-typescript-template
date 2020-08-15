@@ -3,12 +3,27 @@
  * @file 应用级别的配置，供所有页面公用
  */
 
-import { setGlobalData, getGlobalData } from './global'
+import app from '@system.app'
+import prompt from '@system.prompt'
+import webview from '@system.webview'
+import router from '@system.router'
+
 import { $utils, $apis, $ajax } from './helper'
 
-setGlobalData('$utils', $utils)
-setGlobalData('$apis', $apis)
-setGlobalData('$ajax', $ajax)
+const hook2global = global.__proto__ || global
+
+// 将需要用到的模块，挂载于 qa 对象，全局可用；如 qa.prompt.[NAME]；
+hook2global.qa = {
+  app,
+  prompt,
+  webview,
+  router
+}
+
+// 将自己封装的方法，挂载于全局 global，全局可调用，如：$utils.printObj；
+hook2global.$utils = $utils
+hook2global.$apis = $apis
+hook2global.$ajax = $ajax
 
 export default {
   showMenu: $utils.showMenu,

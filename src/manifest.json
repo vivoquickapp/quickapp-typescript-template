@@ -8,17 +8,6 @@
   "deviceTypeList": [
     "phone"
   ],
-  "features": [
-    {
-      "name": "system.prompt"
-    },
-    {
-      "name": "system.router"
-    },
-    {
-      "name": "system.shortcut"
-    }
-  ],
   "permissions": [
     {
       "origin": "*"

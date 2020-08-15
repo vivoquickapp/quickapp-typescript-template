@@ -22,10 +22,10 @@
   <a href="https://github.com/vivoquickapp/quickapp-typescript-template">
     <img src="https://img.shields.io/github/license/vivoquickapp/quickapp-typescript-template.svg" alt="LICENSE">
   </a>
-  <a href="https://nice.lovejade.cn/zh/article/quickapp-boilerplate-template.html">
+  <a href="https://quickapp.vivo.com.cn/how-to-develop-quickapp-based-on-typescript/">
     <img src="https://img.shields.io/badge/chat-on%20blog-brightgreen.svg" alt="Chat On My Blog">
   </a>
-  <a href="https://aboutme.lovejade.cn/?from=github"><img src="https://img.shields.io/badge/Author-vivoer-%23a696c8.svg" alt="vivo Developer"></a>
+  <a href="https://quickapp.vivo.com.cn/"><img src="https://img.shields.io/badge/Author-vivoer-%23a696c8.svg" alt="vivo Developer"></a>
 </div>
 
 ## 目标与哲学

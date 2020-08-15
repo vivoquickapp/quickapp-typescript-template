@@ -35,14 +35,9 @@
 </template>
 
 <script>
-import webview from '@system.webview'
-import router from '@system.router'
-import app from '@system.app'
-
-// import { greeter, goAbout, add } from './greeter'
 const helloStr: string = '切换文本'
 
-const appInfo = app.getInfo()
+const appInfo = qa.app.getInfo()
 
 export default {
   // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
@@ -74,7 +69,36 @@ export default {
   },
 
   onSwitchClick() {
-    this.helloStr = this.helloStr === helloStr ? 'Hello TS.' : helloStr
+    qa.prompt
+      .showDialog({
+        title: '温馨提示',
+        message: '已经成功切换文本信息',
+        buttons: [
+          {
+            text: '确定',
+            color: '#33dd44'
+          },
+          {
+            text: '取消',
+            color: '#696969'
+          }
+        ]
+      })
+      .then(reps => {
+        const isConfirm = reps.data.index === '0'
+
+        this.helloStr = isConfirm ? (this.helloStr === helloStr ? 'Hello TS.' : helloStr) : this.helloStr
+
+        const msg = isConfirm ? 'showDialog 「确定」回调' : 'showDialog 「取消」回调'
+        qa.prompt.showToast({
+          message: msg
+        })
+      })
+      .catch(() => {
+        qa.prompt.showToast({
+          message: 'showDialog 失败回调'
+        })
+      })
   }
 }
 </script>
