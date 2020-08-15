@@ -4,10 +4,7 @@
     "node": true,
     "commonjs": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:ux/essential"
-  ],
+  "extends": ["eslint:recommended", "plugin:ux/essential"],
   "parserOptions": {
     "parser": "babel-eslint",
     "sourceType": "module",
@@ -27,18 +24,11 @@
     "clearInterval": false
   },
   "rules": {
-    "indent": [
-      "warn",
-      2
-    ],
+    "indent": ["warn", 2],
     "no-console": [
       "warn",
       {
-        "allow": [
-          "info",
-          "warn",
-          "error"
-        ]
+        "allow": ["info", "warn", "error"]
       }
     ],
     "no-unused-vars": [
@@ -55,13 +45,7 @@
         "allowTemplateLiterals": true
       }
     ],
-    "linebreak-style": [
-      "warn",
-      "unix"
-    ],
-    "semi": [
-      "warn",
-      "never"
-    ]
+    "linebreak-style": ["warn", "unix"],
+    "semi": ["warn", "never"]
   }
 }

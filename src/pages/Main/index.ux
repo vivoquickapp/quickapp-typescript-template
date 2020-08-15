@@ -3,7 +3,9 @@
     <div class="nice-detail wrapper-padding">
       <image class="icon" src="{{icon}}"></image>
       <text class="title">{{ title }}</text>
-      <text class="desc">快应用是基于手机硬件平台的新型应用形态，标准是由主流手机厂商组成的快应用联盟联合制定。</text>
+      <text class="desc"
+        >快应用是基于手机硬件平台的新型应用形态，标准是由主流手机厂商组成的快应用联盟联合制定。</text
+      >
       <div class="btn-area">
         <input class="button" type="button" onclick="onOpenDocClick" value="关于页面" />
         <input class="button" type="button" onclick="onSwitchClick" value="{{ helloStr }}" />
@@ -87,7 +89,11 @@ export default {
       .then(reps => {
         const isConfirm = reps.data.index === '0'
 
-        this.helloStr = isConfirm ? (this.helloStr === helloStr ? 'Hello TS.' : helloStr) : this.helloStr
+        this.helloStr = isConfirm
+          ? this.helloStr === helloStr
+            ? 'Hello TS.'
+            : helloStr
+          : this.helloStr
 
         const msg = isConfirm ? 'showDialog 「确定」回调' : 'showDialog 「取消」回调'
         qa.prompt.showToast({
